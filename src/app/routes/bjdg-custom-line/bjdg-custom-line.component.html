@@ -1,0 +1,27 @@
+<div class="cl-main">
+  <div class="popover-main">
+    <div cdkDropList (cdkDropListDropped)="drop($event)" class="cl-m-content">
+      <div cdkDrag  cdkDragBoundary=".cl-m-content" *ngFor="let row of queryRows;index as i"
+        class="query-row">
+        <i  nz-icon nzType="drag" nzTheme="outline"></i>
+        <nz-input-group [ngStyle]="{width:'calc(100% - '+iconSpacing+')'}" nzCompact>
+          <nz-select [ngStyle]="{width:keyWidth}" (nzOpenChange)="selectOpenChange($event)"
+            (ngModelChange)="selectChange($event,row)" [(ngModel)]="row.selectModel">
+            <ng-container *ngFor="let option of restrictedFieldData; index as j">
+              <nz-option [nzLabel]="option.value" [nzValue]="option.value">
+              </nz-option>
+            </ng-container>
+          </nz-select>
+          <input [ngStyle]="{width:valueWidth}" type="text" nz-input [(ngModel)]="row.inputModel" />
+        </nz-input-group>
+        <i class="cursor" *ngIf="i===queryRows.length-1" (click)="addRow()" nz-icon nzType="plus" nzTheme="outline"></i>
+        <i class="cursor" *ngIf="i<queryRows.length-1" (click)="deleteRow(row,i)" nz-icon nzType="minus"
+          nzTheme="outline"></i>
+      </div>
+    </div>
+    <div class="cl-m-footer">
+      <button (click)="reset()" nz-button nzType="default">重置</button>
+      <button (click)="query()" [disabled]="!isEmpty()" nz-button nzType="primary">查询</button>
+    </div>
+  </div>
+</div>
