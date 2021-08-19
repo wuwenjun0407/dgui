@@ -33,6 +33,6 @@ export class AppComponent {
 
   // bjdg-bjdg-custom-line > method
   getCurrentdData(event) {
-    console.log(event);
+    console.log(event,'1');
   }
 }
