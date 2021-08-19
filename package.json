@@ -26,6 +26,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.6",
     "@angular/cli": "~9.1.6",
+    "@angular/core": "9.1.11",
     "@angular/compiler-cli": "~9.1.7",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
@@ -44,7 +45,8 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "rxjs": "6.5.4"
   },
   "lint-staged": {
     "*.ts": "npm run lint:ts",
@@ -54,5 +56,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "@angular/compiler": "^12.2.2"
   }
 }
