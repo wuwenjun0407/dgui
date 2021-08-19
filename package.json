@@ -46,13 +46,13 @@
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
   },
+  "lint-staged": {
+    "*.ts": "npm run lint:ts",
+    "src/**/*.less": "npm run lint:style"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "*.ts": "npm run lint:ts",
-    "src/**/*.less": "npm run lint:style"
   }
 }
