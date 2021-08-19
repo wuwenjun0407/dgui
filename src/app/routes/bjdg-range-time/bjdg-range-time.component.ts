@@ -62,6 +62,7 @@ export class BjdgRangeTimeComponent implements OnInit {
   }
 
   changeDate(event: Array<Date>) {
-    this.currentDate.emit(event1);
+    window.p = 0;
+    this.currentDate.emit(event);
   }
 }
