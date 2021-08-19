@@ -50,6 +50,7 @@ export class BjdgRangeTimeComponent implements OnInit {
   ngOnInit() {}
 
   disabledDate(current: Date) {
+    console.log('[][][]');
     if (this.rangeTime.length !== 0) {
       const time = [this.rangeTime[0] * 1000, this.rangeTime[1] * 1000];
       if (new Date(time[0]) > current) {
